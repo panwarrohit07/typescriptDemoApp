@@ -12,7 +12,7 @@ else {
     svc.getUserInfo(username, (user: User) => {
         svc.getRepos(username, (repo: Repo[]) => {
             let sortedRepos = _.sortBy(repo, [(repo) => repo.forkCount * -1]);
-            let filteredRepos = _.take(sortedRepos, 5);
+            let filteredRepos = _.take(sortedRepos, 7);
             user.repos = filteredRepos;
             console.log(user);
      });
